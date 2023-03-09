@@ -1,5 +1,6 @@
 from turtle import Turtle
 
+# Global variables
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 UP = 90
@@ -8,6 +9,7 @@ LEFT = 180
 RIGHT = 0
 
 
+# Snake class
 class Snake:
 
     def __init__(self):
