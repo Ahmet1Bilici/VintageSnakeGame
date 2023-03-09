@@ -6,11 +6,10 @@ from scoreboard import ScoardBoard
 
 # Main file that sets up the environment and starts game
 
-
 # Set screen
 screen = Screen()
 screen.setup(width=600, height=600)
-screen.bgcolor("black")
+screen.bgcolor("#F7F1E5")
 screen.title("Snake Game")
 screen.tracer(0)
 
@@ -27,6 +26,7 @@ screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
 # Game state
+
 game_on = True
 while game_on:
     screen.update()
@@ -42,12 +42,13 @@ while game_on:
     # When snake collides with any of the walls
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         game_on = False
+        scoreboard.game_over()
 
     # When snake collides with its tail
     for seg in snake.segments[1:]:
-        if snake.head.distance(seg) < 10:
-            game_on = False
+        if snake.head.distance(seg) < 5:
             scoreboard.game_over()
+            game_on = False
 
 
 screen.exitonclick()
