@@ -10,7 +10,7 @@ from scoreboard import ScoardBoard
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("#F7F1E5")
-screen.title("Snake Game")
+screen.title("Vintage Snake")
 screen.tracer(0)
 
 # Initialize snake, food, and scoreboard
@@ -49,9 +49,9 @@ while game_on:
         if seg == snake.head:
             pass
         elif snake.head.distance(seg) < 5:
+
             scoreboard.reset()
             snake.reset()
-
 
 
 screen.exitonclick()
